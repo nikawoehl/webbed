@@ -1,0 +1,120 @@
+accounting-joke-generator.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accounting Joke Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    button {
+      background-color: #ff6f61;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #ff3b2b;
+    }
+
+    .joke-text {
+      font-size: 24px;
+      margin-top: 20px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .like-dislike {
+      margin-top: 30px;
+    }
+
+    .like-btn,
+    .dislike-btn {
+      font-size: 20px;
+      margin: 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .like-btn {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    .dislike-btn {
+      background-color: #f44336;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Accounting Joke Generator</h1>
+    <p>Click below to generate an accounting joke!</p>
+    <button onclick="generateJoke()">Generate Joke</button>
+
+    <div class="joke-text" id="jokeDisplay"></div>
+
+    <div class="like-dislike">
+      <button class="like-btn" onclick="likeJoke()">Like</button>
+      <button class="dislike-btn" onclick="dislikeJoke()">Dislike</button>
+    </div>
+  </div>
+
+  <script>
+    const accountingJokes = [
+      "Why did the accountant break up with the calculator? Because they couldn't count on each other anymore!",
+      "Why don’t accountants ever play hide and seek? Because good luck hiding when you’re always looking for the numbers!",
+      "Why was the accountant always calm? Because they knew how to balance everything!",
+      "I asked the accountant to help me with my finances... and now I’m in balance!",
+      "Why was the accountant so good at keeping secrets? They always knew how to keep things under audit!",
+      "What’s an accountant’s favorite exercise? The balance sheet!",
+      "Why do accountants love working with Excel? Because they’re great at finding the formula for success!"
+    ];
+
+    // Generate a random accounting joke
+    function generateJoke() {
+      const joke = accountingJokes[Math.floor(Math.random() * accountingJokes.length)];
+      document.getElementById("jokeDisplay").textContent = joke;
+      // Random background color
+      document.body.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 80%)`;
+    }
+
+    // Like a joke
+    function likeJoke() {
+      document.getElementById("jokeDisplay").style.color = "#4caf50"; // Green for liked jokes
+    }
+
+    // Dislike a joke
+    function dislikeJoke() {
+      document.getElementById("jokeDisplay").style.color = "#f44336"; // Red for disliked jokes
+    }
+
+    // Default joke
+    generateJoke();
+  </script>
+
+</body>
+</html>
